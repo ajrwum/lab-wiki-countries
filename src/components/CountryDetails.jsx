@@ -42,7 +42,9 @@ const CountryDetails = ({ countries }) => {
             <ul>
               {borderCountries && borderCountries.map(c => {
                 return (
-                  <Link to={`/${c.code}`} key={c.code} >{c.name}</Link>
+                  <p key={c.code}>
+                    <Link to={`/${c.code}`} >{c.name}</Link>
+                  </p>
                 )})
               }
             </ul>  
