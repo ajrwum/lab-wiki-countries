@@ -33,11 +33,17 @@ function App() {
       <div className="container">
         {/* <!-- Bootstrap row wrapper div --> */}
         <div className="row">
-          <Routes>
-            <Route path='/' element={<CountriesList countries={restCountries} />} >
-              <Route path=':id' element={<CountryDetails countries={restCountries} />} />
-            </Route>
-          </Routes>
+          {
+          restCountries.length === 0
+          ?
+            <div><h1>Loading countries...</h1></div>
+          :
+            <Routes>
+              <Route path='/' element={<CountriesList countries={restCountries} />} >
+                <Route path=':id' element={<CountryDetails countries={restCountries} />} />
+              </Route>
+            </Routes>
+          }
         </div>
       </div>
 
